@@ -224,16 +224,16 @@ function addGpaRow(reportCardTableElement) {
 function updateReportCard(reportCardTableElement, currentSemester) {
   // update the dropdown label
   updateDropdownLabel()
+  // reset the report card table's inner html to an empty string
+  if (reportCardTableElement) reportCardTableElement.innerHTML = ``
+
+  // add your code here
   addReportCardHeaders(reportCardTableElement)
   
   addTotalsRow(reportCardTableElement)
   addGpaRow(reportCardTableElement)
   
   studentData[currentSemester].forEach((course, index) => addCourseRowToReportCard(reportCardTableElement, course, index))
-  // reset the report card table's inner html to an empty string
-  if (reportCardTableElement) reportCardTableElement.innerHTML = ``
-
-  // add your code here
 }
 
 /**
